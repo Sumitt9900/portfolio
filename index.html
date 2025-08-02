@@ -41,6 +41,7 @@
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-4">
                         <a href="#about" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">About</a>
+                        <a href="#skills" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Skills</a>
                         <a href="#projects" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Projects</a>
                         <a href="#resume" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Resume</a>
                         <a href="#contact" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Contact</a>
@@ -63,6 +64,7 @@
         <div class="md:hidden hidden" id="mobile-menu">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 <a href="#about" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">About</a>
+                <a href="#skills" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Skills</a>
                 <a href="#projects" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Projects</a>
                 <a href="#resume" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Resume</a>
                 <a href="#contact" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Contact</a>
@@ -113,35 +115,97 @@
             </div>
         </div>
     </section>
+    
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center mb-12">My Skills</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 text-center">
+                <div class="bg-gray-800 p-6 rounded-lg transform hover:scale-110 transition-transform">
+                    <p class="text-2xl">Go</p>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg transform hover:scale-110 transition-transform">
+                    <p class="text-2xl">JavaScript</p>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg transform hover:scale-110 transition-transform">
+                    <p class="text-2xl">Python</p>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg transform hover:scale-110 transition-transform">
+                    <p class="text-2xl">React</p>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg transform hover:scale-110 transition-transform">
+                    <p class="text-2xl">MongoDB</p>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg transform hover:scale-110 transition-transform">
+                    <p class="text-2xl">HTML5</p>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg transform hover:scale-110 transition-transform">
+                    <p class="text-2xl">CSS3</p>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg transform hover:scale-110 transition-transform">
+                    <p class="text-2xl">Figma</p>
+                </div>
+                 <div class="bg-gray-800 p-6 rounded-lg transform hover:scale-110 transition-transform">
+                    <p class="text-2xl">D3.js</p>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg transform hover:scale-110 transition-transform">
+                    <p class="text-2xl">Chart.js</p>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg transform hover:scale-110 transition-transform">
+                    <p class="text-2xl">Git</p>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg transform hover:scale-110 transition-transform">
+                    <p class="text-2xl">SQL</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="section">
+    <section id="projects" class="section bg-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-4xl font-bold text-center mb-12">My Projects</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Project 1 -->
-                <div class="bg-gray-800 rounded-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 group">
+                <!-- Project 1: Weather Dashboard -->
+                <div class="bg-gray-700 rounded-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 group">
+                    <img src="https://placehold.co/600x400/1f2937/d1d5db?text=Weather+Dashboard" alt="Weather Dashboard Project Image" class="w-full h-48 object-cover">
                     <div class="p-8">
-                        <h3 class="text-2xl font-bold text-blue-400">VR Anatomy Tutor</h3>
-                        <p class="mt-4 text-gray-300">An immersive VR learning platform to help medical students study human anatomy without physical cadavers, using gesture-based interaction.</p>
+                        <h3 class="text-2xl font-bold text-blue-400">Dynamic Weather Dashboard</h3>
+                        <p class="mt-4 text-gray-300">An immersive weather application with a dynamic, theme-changing UI based on real-time conditions, featuring an interactive D3.js globe that zooms to searched locations.</p>
                         <div class="mt-6">
-                            <span class="inline-block bg-gray-700 text-gray-300 text-xs font-semibold mr-2 px-2.5 py-1 rounded-full">Raspberry Pi</span>
-                            <span class="inline-block bg-gray-700 text-gray-300 text-xs font-semibold mr-2 px-2.5 py-1 rounded-full">Python</span>
-                            <span class="inline-block bg-gray-700 text-gray-300 text-xs font-semibold mr-2 px-2.5 py-1 rounded-full">VR</span>
-                            <span class="inline-block bg-gray-700 text-gray-300 text-xs font-semibold mr-2 px-2.5 py-1 rounded-full">ML</span>
+                            <span class="inline-block bg-gray-600 text-gray-300 text-xs font-semibold mr-2 px-2.5 py-1 rounded-full">JavaScript</span>
+                            <span class="inline-block bg-gray-600 text-gray-300 text-xs font-semibold mr-2 px-2.5 py-1 rounded-full">D3.js</span>
+                            <span class="inline-block bg-gray-600 text-gray-300 text-xs font-semibold mr-2 px-2.5 py-1 rounded-full">Chart.js</span>
+                            <span class="inline-block bg-gray-600 text-gray-300 text-xs font-semibold mr-2 px-2.5 py-1 rounded-full">API</span>
                         </div>
-                        <a href="#" class="inline-block mt-6 text-blue-400 font-semibold group-hover:text-blue-300 transition-colors">View Project &rarr;</a>
+                        <a href="./weather-dashboard/index.html" target="_blank" class="inline-block mt-6 text-blue-400 font-semibold group-hover:text-blue-300 transition-colors">View Project &rarr;</a>
                     </div>
                 </div>
-                <!-- Project 2 -->
-                <div class="bg-gray-800 rounded-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 group">
+                <!-- Project 2: Hotel Booking App -->
+                <div class="bg-gray-700 rounded-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 group">
+                    <img src="https://placehold.co/600x400/1e3a8a/eef2f9?text=GoHotel" alt="Hotel Booking App Project Image" class="w-full h-48 object-cover">
                     <div class="p-8">
-                        <h3 class="text-2xl font-bold text-blue-400">Hotel Booking App</h3>
-                        <p class="mt-4 text-gray-300">A full-stack web application for browsing and booking hotel rooms, featuring complete CRUD operations for managing bookings.</p>
+                        <h3 class="text-2xl font-bold text-blue-400">Full-Stack Hotel Booking App</h3>
+                        <p class="mt-4 text-gray-300">An elegant, full-stack hotel booking system with a Go (Golang) back-end, MongoDB database, and a responsive front-end. Features a modal-based booking flow and real-time availability.</p>
                         <div class="mt-6">
-                            <span class="inline-block bg-gray-700 text-gray-300 text-xs font-semibold mr-2 px-2.5 py-1 rounded-full">Go (Golang)</span>
-                            <span class="inline-block bg-gray-700 text-gray-300 text-xs font-semibold mr-2 px-2.5 py-1 rounded-full">MongoDB</span>
-                            <span class="inline-block bg-gray-700 text-gray-300 text-xs font-semibold mr-2 px-2.5 py-1 rounded-full">JavaScript</span>
+                            <span class="inline-block bg-gray-600 text-gray-300 text-xs font-semibold mr-2 px-2.5 py-1 rounded-full">Go (Golang)</span>
+                            <span class="inline-block bg-gray-600 text-gray-300 text-xs font-semibold mr-2 px-2.5 py-1 rounded-full">MongoDB</span>
+                            <span class="inline-block bg-gray-600 text-gray-300 text-xs font-semibold mr-2 px-2.5 py-1 rounded-full">Full-Stack</span>
+                        </div>
+                        <a href="./hotel-booking/index.html" target="_blank" class="inline-block mt-6 text-blue-400 font-semibold group-hover:text-blue-300 transition-colors">View Project &rarr;</a>
+                    </div>
+                </div>
+                 <!-- Project 3: VR Anatomy Tutor -->
+                <div class="bg-gray-700 rounded-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 group md:col-span-2">
+                    <img src="https://placehold.co/600x400/4a044e/f3e8ff?text=VR+Anatomy+Tutor" alt="VR Anatomy Tutor Project Image" class="w-full h-48 object-cover">
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold text-blue-400">VR Anatomy Tutor for Medical Students</h3>
+                        <p class="mt-4 text-gray-300">An immersive VR learning platform to help medical students study human anatomy without requiring physical cadavers, using ML for gesture-based interaction.</p>
+                        <div class="mt-6">
+                            <span class="inline-block bg-gray-600 text-gray-300 text-xs font-semibold mr-2 px-2.5 py-1 rounded-full">Python</span>
+                            <span class="inline-block bg-gray-600 text-gray-300 text-xs font-semibold mr-2 px-2.5 py-1 rounded-full">Raspberry Pi</span>
+                            <span class="inline-block bg-gray-600 text-gray-300 text-xs font-semibold mr-2 px-2.5 py-1 rounded-full">Machine Learning</span>
+                            <span class="inline-block bg-gray-600 text-gray-300 text-xs font-semibold mr-2 px-2.5 py-1 rounded-full">VR</span>
                         </div>
                         <a href="#" class="inline-block mt-6 text-blue-400 font-semibold group-hover:text-blue-300 transition-colors">View Project &rarr;</a>
                     </div>
@@ -151,7 +215,7 @@
     </section>
 
     <!-- Resume Section -->
-    <section id="resume" class="section bg-gray-800">
+    <section id="resume" class="section">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
             <h2 class="text-4xl font-bold text-center mb-12">My Resume</h2>
             <div class="bg-white text-gray-800 rounded-xl shadow-2xl p-8 max-w-5xl mx-auto border border-gray-300">
@@ -182,12 +246,16 @@
                             <h2 class="text-2xl font-bold text-blue-700 border-b-2 border-blue-200 pb-2 mb-4">Projects</h2>
                             <div class="space-y-6">
                                 <div>
-                                    <h3 class="text-xl font-bold text-gray-800">VR Anatomy Tutor for Medical Students</h3>
-                                    <p class="mt-2 text-gray-600">Engineered a complete VR learning system with a Raspberry Pi, using ML for gesture-based interaction with 3D models.</p>
+                                    <h3 class="text-xl font-bold text-gray-800">Dynamic Weather Dashboard</h3>
+                                    <p class="mt-2 text-gray-600">Developed an immersive weather application with a dynamic, theme-changing UI and an interactive globe that zooms to the selected location.</p>
                                 </div>
                                 <div>
                                     <h3 class="text-xl font-bold text-gray-800">Full-Stack Hotel Booking Application</h3>
                                     <p class="mt-2 text-gray-600">Developed a full-stack web app with a Go backend, MongoDB, and a JS front-end, implementing a complete RESTful API for CRUD operations.</p>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-gray-800">VR Anatomy Tutor for Medical Students</h3>
+                                    <p class="mt-2 text-gray-600">Engineered a complete VR learning system with a Raspberry Pi, using ML for gesture-based interaction with 3D models.</p>
                                 </div>
                             </div>
                         </section>
@@ -201,7 +269,7 @@
                         </section>
                         <section>
                             <h2 class="text-2xl font-bold text-blue-700 border-b-2 border-blue-200 pb-2 mb-4">Skills</h2>
-                            <p class="text-gray-600">Python, Go, JS, React, HTML/CSS, MongoDB, SQL, Figma, Git</p>
+                            <p class="text-gray-600">Python, Go, JS, React, HTML/CSS, MongoDB, SQL, Figma, Git, D3.js, Chart.js</p>
                         </section>
                         <section>
                             <h2 class="text-2xl font-bold text-blue-700 border-b-2 border-blue-200 pb-2 mb-4">Certifications</h2>
@@ -218,7 +286,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="section">
+    <section id="contact" class="section bg-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 class="text-4xl font-bold mb-4">Get In Touch</h2>
             <p class="text-lg text-gray-400 mb-8">I'm currently open to new opportunities. Feel free to reach out!</p>
@@ -238,13 +306,11 @@
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
         
-        // This check ensures the script doesn't break if the button isn't found.
         if (mobileMenuButton) {
             const openIcon = mobileMenuButton.querySelector('svg:first-of-type');
             const closeIcon = mobileMenuButton.querySelector('svg:last-of-type');
 
             mobileMenuButton.addEventListener('click', () => {
-                // These checks ensure the other elements exist before trying to use them.
                 if (mobileMenu && openIcon && closeIcon) {
                     mobileMenu.classList.toggle('hidden');
                     openIcon.classList.toggle('hidden');
