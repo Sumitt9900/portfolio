@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sumith Hiremath - Portfolio</title>
+    <title>Sumith Hiremath - Developer's Hub</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,314 +11,362 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
+            background-color: #0f172a; /* slate-900 */
+            color: #e2e8f0; /* slate-200 */
         }
-        .section {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding-top: 4rem;
-            padding-bottom: 4rem;
+        /* Typing effect */
+        .typed-cursor {
+            opacity: 1;
+            animation: blink 0.7s infinite;
         }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
         }
-        .fade-in {
-            animation: fadeIn 1s ease-out forwards;
+        /* Flip card effect */
+        .flip-card { perspective: 1000px; }
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+        }
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+        }
+        .flip-card-back {
+            transform: rotateY(180deg);
+        }
+        /* Animated progress bars */
+        .progress-bar-fill {
+            transition: width 2s ease-in-out;
         }
     </style>
 </head>
-<body class="bg-gray-900 text-white">
+<body class="antialiased">
 
-    <!-- Navigation Bar -->
-    <nav class="bg-gray-800/30 backdrop-blur-md sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Header -->
+    <header class="bg-slate-900/70 backdrop-blur-md sticky top-0 z-50">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
                 <div class="flex-shrink-0">
-                    <a href="#home" class="text-2xl font-bold text-white">Sumith Hiremath</a>
+                    <a href="#hero" class="text-2xl font-bold text-white">Sumith Hiremath</a>
                 </div>
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-4">
-                        <a href="#about" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">About</a>
-                        <a href="#skills" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Skills</a>
-                        <a href="#projects" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Projects</a>
-                        <a href="#resume" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Resume</a>
-                        <a href="#contact" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Contact</a>
+                        <a href="#about" class="text-slate-300 hover:text-sky-400 px-3 py-2 rounded-md text-sm font-medium transition-colors">About</a>
+                        <a href="#skills" class="text-slate-300 hover:text-sky-400 px-3 py-2 rounded-md text-sm font-medium transition-colors">Skills</a>
+                        <a href="#projects" class="text-slate-300 hover:text-sky-400 px-3 py-2 rounded-md text-sm font-medium transition-colors">Projects</a>
+                        <a href="#certifications" class="text-slate-300 hover:text-sky-400 px-3 py-2 rounded-md text-sm font-medium transition-colors">Certifications</a>
+                        <a href="#contact" class="text-slate-300 hover:text-sky-400 px-3 py-2 rounded-md text-sm font-medium transition-colors">Contact</a>
                     </div>
                 </div>
-                <div class="md:hidden">
-                    <button id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
-                        <span class="sr-only">Open main menu</span>
-                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
-                        <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                        </svg>
-                    </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="min-h-screen flex items-center justify-center text-center bg-cover bg-center" style="background-image: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), url('https://placehold.co/1920x1080/0f172a/38bdf8?text=Code');">
+            <div>
+                <h1 class="text-5xl md:text-7xl font-extrabold text-white">
+                    I Build <span id="typed-text" class="text-sky-400"></span><span class="typed-cursor">|</span>
+                </h1>
+                <p class="mt-6 max-w-2xl mx-auto text-lg text-slate-300">
+                    Final-year AI & Machine Learning student specializing in full-stack development and creating intelligent, user-centric web applications.
+                </p>
+                <a href="#projects" class="mt-8 inline-block bg-sky-500 text-white font-bold py-3 px-8 rounded-lg hover:bg-sky-600 transition-transform transform hover:scale-105">
+                    View My Work
+                </a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 bg-slate-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-bold text-center mb-12">About Me</h2>
+                <div class="flex flex-col md:flex-row items-center gap-12">
+                    <div class="md:w-1/3">
+                        <img src="https://placehold.co/400x400/1e293b/e0f2fe?text=Sumith" alt="Sumith Hiremath" class="rounded-full shadow-lg mx-auto">
+                    </div>
+                    <div class="md:w-2/3 text-lg">
+                        <p class="leading-relaxed">
+                            I'm a passionate and driven AI/ML student with a strong foundation in full-stack web development. My goal is to leverage technology to solve real-world problems, creating applications that are not only functional but also intuitive and beautiful.
+                        </p>
+                        <p class="mt-4 leading-relaxed">
+                            From building intelligent systems with Python to crafting responsive user interfaces with modern JavaScript, I enjoy every aspect of the development process. I'm a quick learner, a collaborative team player, and I'm always eager to take on new challenges.
+                        </p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <!-- Mobile menu, show/hide based on menu state. -->
-        <div class="md:hidden hidden" id="mobile-menu">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="#about" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">About</a>
-                <a href="#skills" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Skills</a>
-                <a href="#projects" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Projects</a>
-                <a href="#resume" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Resume</a>
-                <a href="#contact" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Contact</a>
-            </div>
-        </div>
-    </nav>
+        </section>
 
-    <!-- Home Section -->
-    <section id="home" class="section max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div class="fade-in">
-            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight">
-                <span class="block">Hello, I'm Sumith.</span>
-                <span class="block text-blue-400 mt-2">I build intelligent web experiences.</span>
-            </h1>
-            <p class="mt-6 max-w-2xl mx-auto text-lg text-gray-300">
-                A final-year AI & Machine Learning student passionate about the intersection of smart technology and clean, user-friendly design.
-            </p>
-            <div class="mt-8">
-                <a href="#projects" class="inline-block bg-blue-600 text-white font-bold py-3 px-8 rounded-lg hover:bg-blue-700 transition-transform transform hover:scale-105">View My Work</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="section bg-gray-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-4xl font-bold text-center mb-12">About Me</h2>
-            <div class="flex flex-col md:flex-row items-center gap-10">
-                <div class="md:w-2/3">
-                    <p class="text-lg leading-relaxed text-gray-300">
-                        I'm a final-year Artificial Intelligence and Machine Learning undergraduate with a strong foundation in web development, web design, UI/UX, and data structures. I'm passionate about building clean, user-centric applications by combining front-end technologies with intelligent systems.
-                    </p>
-                    <p class="mt-4 text-lg leading-relaxed text-gray-300">
-                        My goal is to contribute to impactful technology solutions and I'm always seeking opportunities to apply my skills in a challenging and growth-oriented environment.
-                    </p>
+        <!-- Skills Section -->
+        <section id="skills" class="py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-bold text-center mb-12">Technical Skills</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
+                    <!-- Skill 1 -->
+                    <div>
+                        <div class="flex justify-between mb-1">
+                            <span class="text-base font-medium text-slate-300">Go (Golang)</span>
+                            <span class="text-sm font-medium text-slate-300">85%</span>
+                        </div>
+                        <div class="w-full bg-slate-700 rounded-full h-2.5">
+                            <div class="progress-bar-fill bg-sky-400 h-2.5 rounded-full" style="width: 0%" data-width="85%"></div>
+                        </div>
+                    </div>
+                    <!-- Skill 2 -->
+                    <div>
+                        <div class="flex justify-between mb-1">
+                            <span class="text-base font-medium text-slate-300">Python (AI/ML)</span>
+                            <span class="text-sm font-medium text-slate-300">90%</span>
+                        </div>
+                        <div class="w-full bg-slate-700 rounded-full h-2.5">
+                            <div class="progress-bar-fill bg-sky-400 h-2.5 rounded-full" style="width: 0%" data-width="90%"></div>
+                        </div>
+                    </div>
+                    <!-- Skill 3 -->
+                    <div>
+                        <div class="flex justify-between mb-1">
+                            <span class="text-base font-medium text-slate-300">JavaScript</span>
+                            <span class="text-sm font-medium text-slate-300">95%</span>
+                        </div>
+                        <div class="w-full bg-slate-700 rounded-full h-2.5">
+                            <div class="progress-bar-fill bg-sky-400 h-2.5 rounded-full" style="width: 0%" data-width="95%"></div>
+                        </div>
+                    </div>
+                    <!-- Skill 4 -->
+                    <div>
+                        <div class="flex justify-between mb-1">
+                            <span class="text-base font-medium text-slate-300">React.js</span>
+                            <span class="text-sm font-medium text-slate-300">80%</span>
+                        </div>
+                        <div class="w-full bg-slate-700 rounded-full h-2.5">
+                            <div class="progress-bar-fill bg-sky-400 h-2.5 rounded-full" style="width: 0%" data-width="80%"></div>
+                        </div>
+                    </div>
+                    <!-- Skill 5 -->
+                    <div>
+                        <div class="flex justify-between mb-1">
+                            <span class="text-base font-medium text-slate-300">MongoDB & SQL</span>
+                            <span class="text-sm font-medium text-slate-300">85%</span>
+                        </div>
+                        <div class="w-full bg-slate-700 rounded-full h-2.5">
+                            <div class="progress-bar-fill bg-sky-400 h-2.5 rounded-full" style="width: 0%" data-width="85%"></div>
+                        </div>
+                    </div>
+                    <!-- Skill 6 -->
+                    <div>
+                        <div class="flex justify-between mb-1">
+                            <span class="text-base font-medium text-slate-300">HTML5 & Tailwind CSS</span>
+                            <span class="text-sm font-medium text-slate-300">95%</span>
+                        </div>
+                        <div class="w-full bg-slate-700 rounded-full h-2.5">
+                            <div class="progress-bar-fill bg-sky-400 h-2.5 rounded-full" style="width: 0%" data-width="95%"></div>
+                        </div>
+                    </div>
                 </div>
-                <div class="md:w-1/3">
-                    <div class="bg-gray-700 p-6 rounded-lg">
-                        <h3 class="text-xl font-bold mb-4">Core Skills</h3>
-                        <ul class="space-y-2 text-gray-300">
-                            <li><span class="font-semibold text-blue-400">Languages:</span> Python, Go, JS</li>
-                            <li><span class="font-semibold text-blue-400">Web Tech:</span> React, HTML, CSS</li>
-                            <li><span class="font-semibold text-blue-400">Databases:</span> MongoDB, SQL</li>
-                            <li><span class="font-semibold text-blue-400">UI/UX:</span> Figma, User-Centered Design</li>
+            </div>
+        </section>
+
+        <!-- Projects Gallery Section -->
+        <section id="projects" class="py-20 bg-slate-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-bold text-center mb-4">Latest Work</h2>
+                <p class="text-center text-slate-400 mb-12">A selection of my recent projects.</p>
+                <!-- Filter Buttons -->
+                <div class="flex justify-center space-x-4 mb-8">
+                    <button class="filter-btn bg-sky-500 text-white py-2 px-4 rounded-lg" data-filter="all">All</button>
+                    <button class="filter-btn bg-slate-700 text-slate-300 py-2 px-4 rounded-lg" data-filter="ai-ml">AI/ML</button>
+                    <button class="filter-btn bg-slate-700 text-slate-300 py-2 px-4 rounded-lg" data-filter="full-stack">Full-Stack</button>
+                    <button class="filter-btn bg-slate-700 text-slate-300 py-2 px-4 rounded-lg" data-filter="frontend">Frontend</button>
+                </div>
+                <!-- Project Grid -->
+                <div id="project-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Project Card 1 -->
+                    <div class="project-card flip-card h-80" data-category="frontend">
+                        <div class="flip-card-inner rounded-lg shadow-lg">
+                            <div class="flip-card-front bg-cover bg-center rounded-lg" style="background-image: url('https://placehold.co/600x400/1f2937/d1d5db?text=Weather+Dashboard')"></div>
+                            <div class="flip-card-back bg-slate-700 p-6 rounded-lg flex flex-col justify-center items-center text-center">
+                                <h3 class="text-xl font-bold">Dynamic Weather Dashboard</h3>
+                                <p class="mt-2 text-slate-300">An API-driven weather app with a theme-changing UI and interactive globe.</p>
+                                <a href="https://sumitt9900.github.io/API-driven-weather-app/" target="_blank" class="mt-4 inline-block bg-sky-500 text-white font-semibold py-2 px-4 rounded-lg hover:bg-sky-600 transition-colors">View Project</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project Card 2 -->
+                    <div class="project-card flip-card h-80" data-category="full-stack">
+                        <div class="flip-card-inner rounded-lg shadow-lg">
+                            <div class="flip-card-front bg-cover bg-center rounded-lg" style="background-image: url('https://placehold.co/600x400/1e3a8a/eef2f9?text=GoHotel')"></div>
+                            <div class="flip-card-back bg-slate-700 p-6 rounded-lg flex flex-col justify-center items-center text-center">
+                                <h3 class="text-xl font-bold">GoHotel Booking App</h3>
+                                <p class="mt-2 text-slate-300">A full-stack hotel booking system with a Go backend and MongoDB.</p>
+                                <a href="#" target="_blank" class="mt-4 inline-block bg-sky-500 text-white font-semibold py-2 px-4 rounded-lg hover:bg-sky-600 transition-colors">View Code</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project Card 3 -->
+                    <div class="project-card flip-card h-80" data-category="ai-ml">
+                        <div class="flip-card-inner rounded-lg shadow-lg">
+                            <div class="flip-card-front bg-cover bg-center rounded-lg" style="background-image: url('https://placehold.co/600x400/4f46e5/e0e7ff?text=Gistify')"></div>
+                            <div class="flip-card-back bg-slate-700 p-6 rounded-lg flex flex-col justify-center items-center text-center">
+                                <h3 class="text-xl font-bold">Gistify AI Summarizer</h3>
+                                <p class="mt-2 text-slate-300">A web app using the Gemini API to summarize text instantly.</p>
+                                <a href="#" target="_blank" class="mt-4 inline-block bg-sky-500 text-white font-semibold py-2 px-4 rounded-lg hover:bg-sky-600 transition-colors">View Project</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications & Resume Section -->
+        <section id="certifications" class="py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h2 class="text-4xl font-bold mb-8">Certifications</h2>
+                        <ul class="space-y-4 text-lg">
+                            <li class="flex items-center space-x-3"><span class="text-sky-400">&#10003;</span><span>Prompt Design in Vertex AI - Google</span></li>
+                            <li class="flex items-center space-x-3"><span class="text-sky-400">&#10003;</span><span>Google Gen AI Exchange Program - Google</span></li>
+                            <li class="flex items-center space-x-3"><span class="text-sky-400">&#10003;</span><span>Full Stack Development Course - Udemy</span></li>
+                            <li class="flex items-center space-x-3"><span class="text-sky-400">&#10003;</span><span>DBMS Course - Scaler</span></li>
+                            <li class="flex items-center space-x-3"><span class="text-sky-400">&#10003;</span><span>Figma UI/UX Bootcamp - Udemy</span></li>
                         </ul>
                     </div>
+                    <div class="text-center bg-slate-800 p-10 rounded-lg">
+                        <h2 class="text-4xl font-bold mb-4">View My Resume</h2>
+                        <p class="text-slate-400 mb-6">Download a PDF version of my resume to see the full details of my experience and skills.</p>
+                        <a href="#" class="inline-block bg-sky-500 text-white font-bold py-3 px-8 rounded-lg hover:bg-sky-600 transition-transform transform hover:scale-105">Download Resume</a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
-    
-    <!-- Skills Section -->
-    <section id="skills" class="section">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-4xl font-bold text-center mb-12">My Skills</h2>
-            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 text-center">
-                <div class="bg-gray-800 p-6 rounded-lg transform hover:scale-110 transition-transform">
-                    <p class="text-2xl">Go</p>
-                </div>
-                <div class="bg-gray-800 p-6 rounded-lg transform hover:scale-110 transition-transform">
-                    <p class="text-2xl">JavaScript</p>
-                </div>
-                <div class="bg-gray-800 p-6 rounded-lg transform hover:scale-110 transition-transform">
-                    <p class="text-2xl">Python</p>
-                </div>
-                <div class="bg-gray-800 p-6 rounded-lg transform hover:scale-110 transition-transform">
-                    <p class="text-2xl">React</p>
-                </div>
-                <div class="bg-gray-800 p-6 rounded-lg transform hover:scale-110 transition-transform">
-                    <p class="text-2xl">MongoDB</p>
-                </div>
-                <div class="bg-gray-800 p-6 rounded-lg transform hover:scale-110 transition-transform">
-                    <p class="text-2xl">HTML5</p>
-                </div>
-                <div class="bg-gray-800 p-6 rounded-lg transform hover:scale-110 transition-transform">
-                    <p class="text-2xl">CSS3</p>
-                </div>
-                <div class="bg-gray-800 p-6 rounded-lg transform hover:scale-110 transition-transform">
-                    <p class="text-2xl">Figma</p>
-                </div>
-                 <div class="bg-gray-800 p-6 rounded-lg transform hover:scale-110 transition-transform">
-                    <p class="text-2xl">D3.js</p>
-                </div>
-                <div class="bg-gray-800 p-6 rounded-lg transform hover:scale-110 transition-transform">
-                    <p class="text-2xl">Chart.js</p>
-                </div>
-                <div class="bg-gray-800 p-6 rounded-lg transform hover:scale-110 transition-transform">
-                    <p class="text-2xl">Git</p>
-                </div>
-                <div class="bg-gray-800 p-6 rounded-lg transform hover:scale-110 transition-transform">
-                    <p class="text-2xl">SQL</p>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="section bg-gray-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-4xl font-bold text-center mb-12">My Projects</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Project 1: Weather Dashboard -->
-                <div class="bg-gray-700 rounded-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 group">
-                    <img src="https://placehold.co/600x400/1f2937/d1d5db?text=Weather+Dashboard" alt="Weather Dashboard Project Image" class="w-full h-48 object-cover">
-                    <div class="p-8">
-                        <h3 class="text-2xl font-bold text-blue-400">Dynamic Weather Dashboard</h3>
-                        <p class="mt-4 text-gray-300">An immersive weather application with a dynamic, theme-changing UI based on real-time conditions, featuring an interactive D3.js globe that zooms to searched locations.</p>
-                        <div class="mt-6">
-                            <span class="inline-block bg-gray-600 text-gray-300 text-xs font-semibold mr-2 px-2.5 py-1 rounded-full">JavaScript</span>
-                            <span class="inline-block bg-gray-600 text-gray-300 text-xs font-semibold mr-2 px-2.5 py-1 rounded-full">D3.js</span>
-                            <span class="inline-block bg-gray-600 text-gray-300 text-xs font-semibold mr-2 px-2.5 py-1 rounded-full">Chart.js</span>
-                            <span class="inline-block bg-gray-600 text-gray-300 text-xs font-semibold mr-2 px-2.5 py-1 rounded-full">API</span>
-                        </div>
-                        <a href="https://sumitt9900.github.io/API-driven-weather-app/" target="_blank" class="inline-block mt-6 text-blue-400 font-semibold group-hover:text-blue-300 transition-colors">View Project &rarr;</a>
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 bg-slate-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-4xl font-bold mb-4">Get In Touch</h2>
+                <p class="text-lg text-slate-400 mb-8 max-w-2xl mx-auto">I'm currently open to new opportunities and collaborations. Feel free to reach out if you have a project in mind or just want to connect!</p>
+                <form id="contact-form" class="max-w-xl mx-auto text-left">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <input type="text" placeholder="Your Name" class="w-full p-3 bg-slate-700 border border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500" required>
+                        <input type="email" placeholder="Your Email" class="w-full p-3 bg-slate-700 border border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500" required>
                     </div>
-                </div>
-                <!-- Project 2: Hotel Booking App -->
-                <div class="bg-gray-700 rounded-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 group">
-                    <img src="https://placehold.co/600x400/1e3a8a/eef2f9?text=GoHotel" alt="Hotel Booking App Project Image" class="w-full h-48 object-cover">
-                    <div class="p-8">
-                        <h3 class="text-2xl font-bold text-blue-400">Full-Stack Hotel Booking App</h3>
-                        <p class="mt-4 text-gray-300">An elegant, full-stack hotel booking system with a Go (Golang) back-end, MongoDB database, and a responsive front-end. Features a modal-based booking flow and real-time availability.</p>
-                        <div class="mt-6">
-                            <span class="inline-block bg-gray-600 text-gray-300 text-xs font-semibold mr-2 px-2.5 py-1 rounded-full">Go (Golang)</span>
-                            <span class="inline-block bg-gray-600 text-gray-300 text-xs font-semibold mr-2 px-2.5 py-1 rounded-full">MongoDB</span>
-                            <span class="inline-block bg-gray-600 text-gray-300 text-xs font-semibold mr-2 px-2.5 py-1 rounded-full">Full-Stack</span>
-                        </div>
-                        <a href="./hotel-booking/index.html" target="_blank" class="inline-block mt-6 text-blue-400 font-semibold group-hover:text-blue-300 transition-colors">View Project &rarr;</a>
-                    </div>
-                </div>
-                 <!-- Project 3: VR Anatomy Tutor -->
-                <div class="bg-gray-700 rounded-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 group md:col-span-2">
-                    <img src="https://placehold.co/600x400/4a044e/f3e8ff?text=VR+Anatomy+Tutor" alt="VR Anatomy Tutor Project Image" class="w-full h-48 object-cover">
-                    <div class="p-8">
-                        <h3 class="text-2xl font-bold text-blue-400">VR Anatomy Tutor for Medical Students</h3>
-                        <p class="mt-4 text-gray-300">An immersive VR learning platform to help medical students study human anatomy without requiring physical cadavers, using ML for gesture-based interaction.</p>
-                        <div class="mt-6">
-                            <span class="inline-block bg-gray-600 text-gray-300 text-xs font-semibold mr-2 px-2.5 py-1 rounded-full">Python</span>
-                            <span class="inline-block bg-gray-600 text-gray-300 text-xs font-semibold mr-2 px-2.5 py-1 rounded-full">Raspberry Pi</span>
-                            <span class="inline-block bg-gray-600 text-gray-300 text-xs font-semibold mr-2 px-2.5 py-1 rounded-full">Machine Learning</span>
-                            <span class="inline-block bg-gray-600 text-gray-300 text-xs font-semibold mr-2 px-2.5 py-1 rounded-full">VR</span>
-                        </div>
-                        <a href="#" class="inline-block mt-6 text-blue-400 font-semibold group-hover:text-blue-300 transition-colors">View Project &rarr;</a>
-                    </div>
-                </div>
+                    <textarea placeholder="Your Message" rows="5" class="w-full p-3 bg-slate-700 border border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500 mb-6" required></textarea>
+                    <button type="submit" class="w-full bg-sky-500 text-white font-bold py-3 px-8 rounded-lg hover:bg-sky-600 transition-colors">
+                        Send Message
+                    </button>
+                </form>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <!-- Resume Section -->
-    <section id="resume" class="section">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-            <h2 class="text-4xl font-bold text-center mb-12">My Resume</h2>
-            <div class="bg-white text-gray-800 rounded-xl shadow-2xl p-8 max-w-5xl mx-auto border border-gray-300">
-                <!-- Embedded Resume Content -->
-                <header class="flex flex-col sm:flex-row items-start justify-between pb-8 border-b border-gray-200">
-                    <div class="text-center sm:text-left">
-                        <h1 class="text-4xl sm:text-5xl font-bold text-gray-900">Sumith Hiremath</h1>
-                        <p class="text-xl text-gray-600 mt-2">AI/ML Student & Web Developer</p>
-                    </div>
-                    <div class="mt-6 sm:mt-0 w-full sm:w-auto">
-                        <div class="text-sm text-gray-700 space-y-2 text-center sm:text-right">
-                            <p>hiremathsumith99@gmail.com</p>
-                            <p>linkedin.com/in/sumith-hiremath-bb8344248</p>
-                            <p>github.com/Sumitt9900</p>
-                            <p>Bengaluru, Karnataka, India</p>
-                        </div>
-                    </div>
-                </header>
-                <main class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-12">
-                    <div class="md:col-span-2 space-y-10">
-                        <section>
-                            <h2 class="text-2xl font-bold text-blue-700 border-b-2 border-blue-200 pb-2 mb-4">Professional Summary</h2>
-                            <p class="text-gray-700 leading-relaxed">
-                                Final-year Artificial Intelligence and Machine Learning undergraduate with a strong foundation in web development, web design, UI/UX, and data structures. Passionate about building clean, user-centric applications by combining front-end technologies with intelligent systems.
-                            </p>
-                        </section>
-                        <section>
-                            <h2 class="text-2xl font-bold text-blue-700 border-b-2 border-blue-200 pb-2 mb-4">Projects</h2>
-                            <div class="space-y-6">
-                                <div>
-                                    <h3 class="text-xl font-bold text-gray-800">Dynamic Weather Dashboard</h3>
-                                    <p class="mt-2 text-gray-600">Developed an immersive weather application with a dynamic, theme-changing UI and an interactive globe that zooms to the selected location.</p>
-                                </div>
-                                <div>
-                                    <h3 class="text-xl font-bold text-gray-800">Full-Stack Hotel Booking Application</h3>
-                                    <p class="mt-2 text-gray-600">Developed a full-stack web app with a Go backend, MongoDB, and a JS front-end, implementing a complete RESTful API for CRUD operations.</p>
-                                </div>
-                                <div>
-                                    <h3 class="text-xl font-bold text-gray-800">VR Anatomy Tutor for Medical Students</h3>
-                                    <p class="mt-2 text-gray-600">Engineered a complete VR learning system with a Raspberry Pi, using ML for gesture-based interaction with 3D models.</p>
-                                </div>
-                            </div>
-                        </section>
-                    </div>
-                    <div class="md:col-span-1 space-y-10">
-                        <section>
-                            <h2 class="text-2xl font-bold text-blue-700 border-b-2 border-blue-200 pb-2 mb-4">Education</h2>
-                            <h3 class="text-lg font-bold text-gray-800">B.Tech, AI & Machine Learning</h3>
-                            <p class="text-gray-600">Presidency University, Bengaluru</p>
-                            <p class="text-sm text-gray-500">Expected Graduation: July 2026</p>
-                        </section>
-                        <section>
-                            <h2 class="text-2xl font-bold text-blue-700 border-b-2 border-blue-200 pb-2 mb-4">Skills</h2>
-                            <p class="text-gray-600">Python, Go, JS, React, HTML/CSS, MongoDB, SQL, Figma, Git, D3.js, Chart.js</p>
-                        </section>
-                        <section>
-                            <h2 class="text-2xl font-bold text-blue-700 border-b-2 border-blue-200 pb-2 mb-4">Certifications</h2>
-                            <ul class="space-y-2 list-disc list-inside text-gray-700">
-                                <li>Full Stack Development - Udemy</li>
-                                <li>DBMS Fundamentals & Advanced - Scaler</li>
-                                <li>Figma UI/UX Bootcamp - Udemy</li>
-                            </ul>
-                        </section>
-                    </div>
-                </main>
-            </div>
+    <!-- Footer -->
+    <footer class="bg-slate-900 py-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-slate-400">
+            <p>&copy; 2025 Sumith Hiremath. All Rights Reserved.</p>
         </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="section bg-gray-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-4xl font-bold mb-4">Get In Touch</h2>
-            <p class="text-lg text-gray-400 mb-8">I'm currently open to new opportunities. Feel free to reach out!</p>
-            <a href="mailto:hiremathsumith99@gmail.com" class="inline-block bg-blue-600 text-white font-bold py-3 px-8 rounded-lg hover:bg-blue-700 transition-transform transform hover:scale-105">Say Hello</a>
-            <div class="mt-12 flex justify-center space-x-6">
-                <a href="https://github.com/Sumitt9900" target="_blank" class="text-gray-400 hover:text-white transition-colors">
-                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.492.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.03-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.378.203 2.398.1 2.65.64.7 1.028 1.595 1.028 2.688 0 3.848-2.338 4.695-4.566 4.943.359.308.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd" /></svg>
-                </a>
-                <a href="https://www.linkedin.com/in/sumith-hiremath-bb8344248/" target="_blank" class="text-gray-400 hover:text-white transition-colors">
-                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" /></svg>
-                </a>
-            </div>
-        </div>
-    </section>
+    </footer>
 
     <script>
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        if (mobileMenuButton) {
-            const openIcon = mobileMenuButton.querySelector('svg:first-of-type');
-            const closeIcon = mobileMenuButton.querySelector('svg:last-of-type');
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- Typing Effect ---
+            const typedTextSpan = document.getElementById("typed-text");
+            const textArray = ["Web Applications.", "AI-Powered Solutions.", "Interactive Experiences."];
+            const typingDelay = 100;
+            const erasingDelay = 50;
+            const newTextDelay = 2000;
+            let textArrayIndex = 0;
+            let charIndex = 0;
 
-            mobileMenuButton.addEventListener('click', () => {
-                if (mobileMenu && openIcon && closeIcon) {
-                    mobileMenu.classList.toggle('hidden');
-                    openIcon.classList.toggle('hidden');
-                    closeIcon.classList.toggle('hidden');
+            function type() {
+                if (charIndex < textArray[textArrayIndex].length) {
+                    typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
+                    charIndex++;
+                    setTimeout(type, typingDelay);
+                } else {
+                    setTimeout(erase, newTextDelay);
                 }
+            }
+
+            function erase() {
+                if (charIndex > 0) {
+                    typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex - 1);
+                    charIndex--;
+                    setTimeout(erase, erasingDelay);
+                } else {
+                    textArrayIndex++;
+                    if (textArrayIndex >= textArray.length) textArrayIndex = 0;
+                    setTimeout(type, typingDelay + 1100);
+                }
+            }
+            if (textArray.length) setTimeout(type, newTextDelay + 250);
+
+            // --- Project Filtering ---
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const projectCards = document.querySelectorAll('.project-card');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const filter = button.dataset.filter;
+                    
+                    filterButtons.forEach(btn => {
+                        btn.classList.remove('bg-sky-500', 'text-white');
+                        btn.classList.add('bg-slate-700', 'text-slate-300');
+                    });
+                    button.classList.add('bg-sky-500', 'text-white');
+                    button.classList.remove('bg-slate-700', 'text-slate-300');
+
+                    projectCards.forEach(card => {
+                        if (filter === 'all' || card.dataset.category === filter) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
             });
-        }
+            
+            // --- Animated Progress Bars ---
+            const skillsSection = document.getElementById('skills');
+            const progressBars = document.querySelectorAll('.progress-bar-fill');
+
+            const animateSkills = () => {
+                progressBars.forEach(bar => {
+                    const targetWidth = bar.dataset.width;
+                    bar.style.width = targetWidth;
+                });
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateSkills();
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            observer.observe(skillsSection);
+
+            // --- Contact Form ---
+            const contactForm = document.getElementById('contact-form');
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('Thank you for your message!');
+                contactForm.reset();
+            });
+        });
     </script>
 </body>
 </html>
-
